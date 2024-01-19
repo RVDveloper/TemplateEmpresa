@@ -11,11 +11,29 @@
     color: #fff;
 }
 
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: #9139b4;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    position: relative;
+}
+
 video {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
+    max-height: 800px;
+    height: 600px;
     width: 100%;
     object-fit: cover;
     pointer-events: none;
@@ -23,26 +41,56 @@ video {
     transition: 1s;
 }
 
-.container {
-    max-width: 950px;
-    margin: auto;
-}
-
 .navbar {
     padding: 12px 10px;
+    display: flex;
+    justify-content: center;
 }
 
-.navbar .container {
+.navbar-slide {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
 }
 
-.navbar .logo {
+.navbar , .logo {
     font-family: 'sd-asian';
     text-decoration: none;
     font-size: 2rem;
 }
+
+.title-flot  h1{
+    position: absolute;
+    font-size: 5em;
+    top: 200px;
+    left: 25%;
+}
+
+.h2-center {text-align: center;}
+
+.box-article-about {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-article-about h3 {text-align: center;}
+
+.articles-info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    
+}
+
+.articles-info p {padding: 20px 30px;}
+
+.box-article-about img {
+    width: 30%;
+}
+
 
 .navbar ul {
     list-style-type: none;
@@ -64,8 +112,8 @@ video {
 
 .page-content {
     text-align: center;
-    margin-top: 12rem;
-    padding: 0 10px;
+    margin-top: 18rem;
+    padding: 6% 10%;
 }
 
 .page-content .inner-content .heading {
@@ -165,4 +213,42 @@ video {
 
 .page-content .social-links a:hover::after { 
     height: 100%;
+}
+
+.footer-responsive {
+    display: grid;
+    grid-template-columns: 35% 1fr 26%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-responsive .social-links {
+    margin-top: 0;
+}
+
+.box-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.column-bro {
+    flex-direction: column;
+}
+
+.amigos-pendejos {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ul-amigos {
+    list-style-type: none;
+}
+
+.copy {
+    border-top: 1px solid #fff;
+    text-align: center;
+    padding: 20px 0;
 }
