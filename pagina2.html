@@ -3,47 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Landing Page</title>
+    <title>Nosotros</title>
     <!-- CSS File  -->
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 5 columnas con ancho igual */
+            justify-content: center; /* Centrar las columnas horizontalmente */
+            align-items: center; /* Centrar las columnas verticalmente */
+            gap: 8%; /* Espacio entre las cards */ /* Set a maximum width for the grid */
+            margin: 0 5%;
+            margin-right:25%;
+            margin-left:25%;
+            margin-top: 50%;
+            padding: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+              grid-template-columns: 1fr; /* Change to single column for small screens */
+            }
+        }
+
+        .grid-container2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 5 columnas con ancho igual */
+            justify-content: center; /* Centrar las columnas horizontalmente */
+            align-items: center; /* Centrar las columnas verticalmente */
+            gap: 8%; /* Espacio entre las cards */ /* Set a maximum width for the grid */
+            margin: 0 5%;
+            margin-right:10%;
+            margin-left:10%;
+            margin-top: 2%;
+            padding: 60px;
+            padding-top: 10%;
+        }
+        @media (max-width: 768px) {
+            .grid-container2 {
+              grid-template-columns: 1fr; /* Change to single column for small screens */
+            }
+        }
+        .card {
+            width: 350px;
+            height: 550px;
+            border-radius: 30px;
+            padding: 30px;
+            background: rgba( 255, 255, 255, 0.2 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 16.5px );
+            -webkit-backdrop-filter: blur( 16.5px );
+            border: 20px transparent;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: 1fr; /* Single column */
+             /* Spacing between grid items */
+        }
+          
+        .card .p-profile {
+            display: flex;
+            justify-content: center;
+            top: -95px;
+            position: relative;
+        }
+          
+        .card .p-profile img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, .4);
+        }
+          
+        .card .name {
+            top: -30px;
+            position: relative;
+            grid-column: 1; /* Span across the single column */
+        }
+          
+        .card .name h2,
+        .card .name p {
+            font-family: 'titillium';
+            text-align: center;
+        }
+          
+        .card .name h2 {
+            font-family: 'titillium';
+            color: #fafafa;
+            text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        }
+          
+        .card .name p {
+            margin: 5px 0;
+            text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        }
+          
+        .card .button {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            grid-column: 1; /* Span across the single column */
+        }
+          
+        .card .button button {
+            padding: 15px 40px;
+            border: 1.5px solid #3fa3d1;
+            background: none;
+            border-radius: 30px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            position: relative;
+        }
+          
+        .card .button button:hover {
+            background: white;
+            color: #3fa3d1;
+        }
+          
+        .card .button button:nth-child(1) {
+            background: #3fa3d1;
+        }
+          
+        .card .button button:nth-child(1):hover {
+            color: #3fa3d1;
+            background-color: white;
+        }
+          
+        .card .inforce {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            grid-column: 1; /* Span across the single column */
+            align-items: center;
+            align-content: center;
+            text-align: center;
+        }
+          
+        .card .inforce h4 {
+            color: #ffffff;
+            font-family: 'titillium';
+            font-weight: 800;
+            text-align: center;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        }
+          
+        .card .inforce p {
+            font-family: 'titillium';
+            text-align: center;
+            font-weight: 400;
+            padding: 4px 15px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        }
+          
+        .card .more {
+            grid-column: 1; /* Span across the single column */
+        }
+          
+        .card .more button {
+            padding: 15px 40px;
+            border: 1.5px solid #3fa3d1;
+            border-radius: 30px;
+            color: white;
+            background: #3fa3d1;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+          
+        .card .more button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-100%);
+            background: white;
+            width: 100%;
+            height: 100%;
+            transition: all .2s;
+            border-radius: 30px;
+            z-index: -1;
+        }
+          
+        .card .more button:hover::before {
+            transform: translateX(0%);
+        }
+          
+        .card .more button:hover {
+            color: #3fa3d1;
+        }
+        
+    </style>
 </head>
 <body>
-    <video autoplay loop muted>
+    <video class="template2-video" autoplay loop muted>
         <source src="media/bg.mp4" >
     </video>
     <nav class="navbar">
-        <div class="container">
+        <div class="container navbar-slide">
             <a href="#" class="logo">Temporal Odyssey VR</a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Plans</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./index.html#competencia">Nivel</a></li>
+                <li><a href="./index.html#estrategias">Estrategias</a></li>
+                <li><a href="./index.html#productos">Productos</a></li>
+                <li><a href="./index.html#control">Control</a></li>
+                <li><a href="./index.html#competidor">Competencia</a></li>
             </ul>
         </div>
     </nav>
-
+    <div class="grid-container">
+       <div class="card">
+            <div class="p-profile">
+                <img src="media/profile1.jpg" alt="">
+            </div>
+        <div class="name">
+            <h2>Rafael Valerio</h2>
+            <p>CTO</p>
+        </div>
+        <div class="button">
+            <a href="url_para_seguir"></a><button>Follow</button></a>
+            <a href="url_para_mensaje"></a><button>Message</button></a>
+        </div>
+        <div class="inforce">
+            
+            <div class="followers">
+                <h4>Estudiante De Primer Curso</h4>
+                <p>DAW</p>
+            </div>
+            
+        </div>
+        <div class="more">
+            <a href="https://github.com/RVDveloper"></a><button>Visit Profile</button></a>
+        </div>
+       </div>
+       <div class="card">
+            <div class="p-profile">
+                <img src="media/Business-Plan-bro.png" alt="">
+            </div>
+        <div class="name">
+            <h2>Cristian Gutierrez</h2>
+            <p>CEO</p>
+        </div>
+        <div class="button">
+            <a href="url_para_seguir"></a><button>Follow</button></a>
+            <a href="url_para_mensaje"></a><button>Message</button></a>
+        </div>
+        <div class="inforce">
+            
+            <div class="followers">
+                <h4>Estudiante De Primer Curso</h4>
+                <p>DAW</p>
+            </div>
+            
+        </div>
+        <div class="more">
+            <a href="https://github.com/KRis20F"><button>Visit Profile</button></a>
+        </div>
+       </div>
+      </div>
+      <div class="grid-container2">
+       <div class="card">
+            <div class="p-profile">
+                <img src="media/9d3bdd3c-7750-4188-8965-81cac5336fee.JPG" alt="">
+            </div>
+        <div class="name">
+            <h2>Alexander Llave</h2>
+            <p>System Specialist & CyberSecurity Chief</p>
+        </div>
+        <div class="button">
+            <a href="url_para_seguir"></a><button>Follow</button></a>
+            <a href="url_para_mensaje"></a><button>Message</button></a>
+        </div>
+        <div class="inforce">
+            
+            <div class="followers">
+                <h4>Estudiante De Primer Curso</h4>
+                <p>DAW</p>
+            </div>
+            
+        </div>
+        <div class="more">
+            <a href="https://github.com/XanderL2"><button>Visit Profile</button></a>
+        </div>
+       </div>
+       <div class="card">
+            <div class="p-profile">
+                <img src="media/1a0d166c-9b0e-4d7e-bb11-bbe414148329.jpg" alt="">
+            </div>
+        <div class="name">
+            <h2>Felipe Nieto</h2>
+            <p>CMO</p>
+        </div>
+        <div class="button">
+            <a href="url_para_seguir"></a><button>Follow</button></a>
+            <a href="url_para_mensaje"></a><button>Message</button></a>
+        </div>
+        <div class="inforce">
+            
+            <div class="followers">
+                <h4>Estudiante De Primer Curso</h4>
+                <p>DAW</p>
+            </div>
+            
+        </div>
+        <div class="more">
+            <a href="https://github.com/pipezzs"><button>Visit Profile</button></a>
+        </div>
+       </div>
+       <div class="card">
+            <div class="p-profile">
+                <img src="media/IMG_8811.PNG" alt="">
+            </div>
+        <div class="name">
+            <h2>Josep Guasch</h2>
+            <p>COO</p>
+        </div>
+        <div class="button">
+            <a href="url_para_seguir"></a><button>Follow</button></a>
+            <a href="url_para_mensaje"></a><button>Message</button></a>
+        </div>
+        <div class="inforce">
+            
+            <div class="followers">
+                <h4>Estudiante De Primer Curso</h4>
+                <p>DAW</p>
+            </div>
+            
+        </div>
+        <div class="more">
+            <a href="url_para_visitar_perfil"><button>Visit Profile</button></a>
+        </div>
+       </div>
+    </div>
     <main class="container">
         <div class="page-content">
             <div class="inner-content">
-                <h1 class="heading">Temporal Odyssey VR</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam, aliquid in vel quo eius possimus magni quibusdam ex perferendis, natus suscipit voluptas, debitis unde vitae omnis saepe ratione ea?</p>
-                <div class="buttons">
-                    <a href="#" class="active">Learn more</a>
-                    <a href="#">Browse</a>
-                </div>
-
-                <div class="social-links">
-                    <a href="#" class="bi bi-facebook" ></a>
-                    <a href="#" class="bi bi-youtube" ></a>
-                    <a href="#" class="bi bi-instagram" ></a>
-                    <a href="#" class="bi bi-linkedin" ></a>
-                </div>
+                <h1 class="about-title">Temporal Odyssey VR</h1>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="page-content footer-responsive">
+            <a href="#" class="logo ">Temporal Odyssey VR</a>
+            <div class="social-links">
+                <a href="#" class="bi bi-facebook" ></a>
+                <a href="#" class="bi bi-youtube" ></a>
+                <a href="#" class="bi bi-instagram" ></a>
+                <a href="#" class="bi bi-twitter-x" ></a>
+            </div>
+            <div class="contact">
+                <h5>Nosotros</h5>
+                <div class="box-footer">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Av Masnou 89, 1-3</p>
+                </div>
+                <div class="box-footer">
+                    <i class="bi bi-telephone"></i>
+                    <p>613999099</p>
+                </div>
+                <div class="box-footer column-bro">
+                    <h5>Integrantes</h5>
+                    <ul class="ul-amigos">
+                        <li class="amigos-pendejos">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Rafael Valerio</p>
+                        </li>
+                        <li class="amigos-pendejos">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Cristian Gutierrez</p>
+                        </li>
+                        <li class="amigos-pendejos">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Alexander Llave</p>
+                        </li>
+                        <li class="amigos-pendejos">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Felipe Nieto</p>
+                        </li>
+                        <li class="amigos-pendejos">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Josep Guasch</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy;Temporal Odyssey VR, Todos los derechos reservados </p>
+        </div>
+    </footer>
 </body>
 </html>
