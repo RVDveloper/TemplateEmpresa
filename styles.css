@@ -19,7 +19,6 @@ img {
 }
 
 body {
-    /* background-color: #072bbd; */
     background: linear-gradient(to bottom, #0729b3, #072bbd, #5a97bb);
     font-family: 'titillium';
 
@@ -33,6 +32,7 @@ body {
 .hero {
     position: relative;
 }
+
 
 video {
     position: absolute;
@@ -59,9 +59,9 @@ video {
     transition: 1s;
 }
 
+
+
 /* .about  */
-
-
 
 /*/pagina 2 nosotros */
 .navbar {
@@ -82,6 +82,11 @@ video {
     text-decoration: none;
     font-size: 2rem;
 }
+
+.bars-responsive > i {
+    display: none;
+}
+
 
 .title-flot  h1{
     font-family: 'titillium';
@@ -275,4 +280,14 @@ video {
     border-top: 1px solid #fff;
     text-align: center;
     padding: 20px 0;
+}
+
+@media only screen and (max-width: 320px) {
+    .bars-responsive {display: none;}
+    .title-flot h1{font-size: 2em;}
+}
+
+@media only screen and (min-width:321px) and (max-width: 750px) {
+    .bars-responsive {display: none;}
+    .title-flot h1{font-size: 2em; text-align: center;}
 }
