@@ -246,7 +246,8 @@ video {
 }
 
 .box-article-about h3 {text-align: center;
-padding: 1%;}
+padding: 1%;
+font-size: 1.7rem;}
 
 .articles-info {
     display: flex;
@@ -255,7 +256,9 @@ padding: 1%;}
     
 }
 
-.articles-info p {padding: 20px 30px;}
+.articles-info p {padding: 20px 30px;
+    font-size: 1.5rem;
+}
 
 .box-article-about img {
     width: 30%;
@@ -429,6 +432,7 @@ padding: 1%;}
 .articles-info2 p {
     padding: 30px 30px 10px;
     margin-bottom: 10px;
+    font-size: 1.5rem;
 
 }
 
